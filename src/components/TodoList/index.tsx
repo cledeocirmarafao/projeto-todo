@@ -4,7 +4,7 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import type { Todo } from "../../hooks/useTodo";
 import IconCheck from "/images/icon-check.svg";
 import IconCross from "/images/icon-cross.svg";
-
+ 
 interface TodoListProps {
   todoList: Todo[];
   toggleTodoCompleted: (id: number) => void;

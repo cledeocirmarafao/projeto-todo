@@ -2,14 +2,12 @@ import { useContext } from "react";
 import { themeConfig } from "../../contexts/theme";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
-
 interface TodoContainerProps {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export const TodoContainer = ({children}: TodoContainerProps) => {
-
-    const { theme } = useContext(ThemeContext)
+export const TodoContainer = ({ children }: TodoContainerProps) => {
+  const { theme } = useContext(ThemeContext);
 
   return (
     <main className={`h-screen ${themeConfig[theme].layout.backgroundColor}`}>
@@ -21,4 +19,3 @@ export const TodoContainer = ({children}: TodoContainerProps) => {
     </main>
   );
 };
-

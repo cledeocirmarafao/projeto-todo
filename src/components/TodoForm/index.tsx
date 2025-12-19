@@ -5,7 +5,7 @@ import { useContext, type FormEvent } from "react";
 interface TodoInputProps {
   addTodo: (event: FormEvent<HTMLFormElement>) => void;
 }
-
+ 
 export const TodoForm = ({ addTodo }: TodoInputProps) => {
   const { theme } = useContext(ThemeContext);
 
