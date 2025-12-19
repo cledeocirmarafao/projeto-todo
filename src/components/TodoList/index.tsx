@@ -3,6 +3,7 @@ import { themeConfig } from "../../contexts/theme";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import type { Todo } from "../../hooks/useTodo";
 import IconCheck from "/images/icon-check.svg";
+import IconCross from "/images/icon-cross.svg";
 
 interface TodoListProps {
   todoList: Todo[];
@@ -61,6 +62,7 @@ export const TodoList = ({
                 >
                   {todo.text}
                 </p>
+                <button className="ml-auto cursor-pointer"><img onClick={() => alert('hello')} src={IconCross} alt="Ícone cross" /></button>
               </div>
             </li>
           ))}
