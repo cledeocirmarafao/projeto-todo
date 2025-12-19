@@ -11,6 +11,7 @@ interface TodoListProps {
   setFilter: (filter: "all" | "active" | "completed") => void;
   filter: "all" | "active" | "completed"
   clearCompleted: () => void
+  removeTodo: (id: number) => void
 }
 
 export const TodoList = ({
@@ -19,6 +20,7 @@ export const TodoList = ({
   setFilter,
   filter,
   clearCompleted,
+  removeTodo,
 }: TodoListProps) => {
   const { theme } = useContext(ThemeContext);
 
@@ -31,7 +33,7 @@ export const TodoList = ({
               key={todo.id}
               className={`p-6 border-b ${themeConfig[theme].todo.borderColor}`}
             >
-              <div className="flex gap-5 items-center">
+              <div className=" group flex gap-5 items-center">
                 <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-[1px]">
                   <button
                     onClick={() => toggleTodoCompleted(todo.id)}
@@ -62,7 +64,7 @@ export const TodoList = ({
                 >
                   {todo.text}
                 </p>
-                <button className="ml-auto cursor-pointer"><img onClick={() => alert('hello')} src={IconCross} alt="Ícone cross" /></button>
+                <button className="ml-auto cursor-pointer sm:hidden group-hover:block transition-opacity duration-200"><img onClick={() => removeTodo(todo.id)} src={IconCross} alt="Ícone cross" /></button>
               </div>
             </li>
           ))}
